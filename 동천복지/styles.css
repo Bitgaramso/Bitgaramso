@@ -1,0 +1,268 @@
+:root {
+    --청록색: #40E0D0;
+    --보라색: #8A2BE2;
+    --진한파랑: #1E1E2E;
+    --흰색: #FFFFFF;
+    --연회색: #F5F5F5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: url('Background Website.webp') no-repeat center center;
+    background-size: cover;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+nav {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+    );
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.네비게이션::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(64, 224, 208, 0.03),
+        rgba(138, 43, 226, 0.03) 2px,
+        transparent 2px,
+        transparent 8px
+    );
+    z-index: -1;
+}
+
+.네비게이션 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.로고 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.로고 img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.로고 span {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--흰색);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.지갑연결 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, var(--청록색), var(--보라색));
+    color: var(--흰색);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.지갑연결:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2);
+}
+
+.팬텀아이콘 {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.메인화면 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.메인화면::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+    );
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+.메인화면 h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--흰색);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    word-break: keep-all;
+}
+
+.메인화면 p {
+    font-size: 1.1rem;
+    color: var(--흰색);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+    word-break: keep-all;
+    line-height: 1.6;
+    max-width: 600px;
+    font-weight: 500;
+}
+
+.메인지갑버튼 {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.15);
+}
+
+.메인지갑버튼 .팬텀아이콘 {
+    width: 28px;
+    height: 28px;
+}
+
+.소셜링크 {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.소셜버튼 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--청록색), var(--보라색));
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.소셜버튼:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2);
+}
+
+.트위터아이콘, .깃허브아이콘 {
+    width: 24px;
+    height: 24px;
+    fill: var(--흰색);
+}
+
+@media (max-width: 768px) {
+    .지갑연결 span {
+        display: none;
+    }
+    
+    .지갑연결 {
+        padding: 0.7rem;
+    }
+    
+    .메인지갑버튼 {
+        padding: 1rem;
+    }
+    
+    .메인지갑버튼 .팬텀아이콘 {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .메인화면 h1 {
+        font-size: 2.2rem;
+        padding: 0 1rem;
+    }
+    
+    .메인화면 p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .소셜버튼{
+        width: 36px;
+        height: 36px;
+    }
+    
+    .트위터아이콘, .깃허브아이콘 {
+        width: 20px;
+        height: 20px;
+    }
+} 
+
+.phantom-button {
+    background: #AB9FF2;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.phantom-button:hover {
+    background: #9481ED;
+}
+
+.phantom-button.connected {
+    background: #4CAF50;
+} 
